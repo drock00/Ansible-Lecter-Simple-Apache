@@ -1,0 +1,21 @@
+---
+- name: install apache server on lamp nodes
+  hosts: lamp
+  tasks:
+    - name: close firewall for apache
+      firewalld:
+        service: http
+        state: disabled
+        permanent: no
+        immediate: no
+    - name: disable apache
+      service:
+        name: httpd
+        state: stopped
+        enabled: false    
+    - name: uninstall apache
+      yum:
+        name: httpd
+        state: absent
+...
+

@@ -1,0 +1,20 @@
+---
+- name: install apache server on lamp nodes
+  hosts: lamp
+  tasks:
+    - name: install apache
+      yum:
+        name: httpd
+        state: latest
+    - name: enable apache
+      service:
+        name: httpd
+        state: started
+        enabled: true
+    - name: open firewall for apache
+      firewalld:
+        service: http
+        state: enabled
+        permanent: yes
+        immediate: yes
+...

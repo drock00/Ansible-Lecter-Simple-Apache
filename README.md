@@ -6,13 +6,13 @@ For RedHat systems only folks, yum yum. But it can easily be modified for other 
 
 # Example Run 1
 ```sh
-$ ansible-playbook install.yml 
+$ ansible-playbook install_apache.yml 
 ```
 # Example Run 2
 ```sh
-$ ansible-playbook uninstall.yml 
+$ ansible-playbook uninstall_apache.yml 
 ```
 
 ### Tech and Running the file
 
-These are very simple plays Boo, it's not Shakespeare. 
+These are very simple plays Boo, they're not Shakespeare. 
